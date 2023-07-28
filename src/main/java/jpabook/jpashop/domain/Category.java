@@ -11,7 +11,8 @@ import java.util.List;
 import static javax.persistence.FetchType.*;
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 public class Category {
 
     @Id
@@ -28,7 +29,6 @@ public class Category {
     private List<Item> items = new ArrayList<>();
 
     @ManyToOne(fetch = LAZY)
-
     @JoinColumn(name = "parent_id")
     private Category parent;
 
